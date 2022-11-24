@@ -1,14 +1,12 @@
 package cat.itacademy.barcelonactiva.S04T02MySQLAlbertMartin.controllers;
 
-
 import cat.itacademy.barcelonactiva.S04T02MySQLAlbertMartin.model.domain.Fruit;
-import cat.itacademy.barcelonactiva.S04T02MySQLAlbertMartin.model.services.FruitService;
+import cat.itacademy.barcelonactiva.S04T02MySQLAlbertMartin.model.services.IFruitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +14,7 @@ import java.util.Optional;
 public class FruitRestController {
 
     @Autowired
-    private FruitService fruitService;
+    private IFruitService fruitService;
 
     @PostMapping("/fruits")
     public ResponseEntity<Fruit> addFruit(@RequestBody Fruit fruit) {
